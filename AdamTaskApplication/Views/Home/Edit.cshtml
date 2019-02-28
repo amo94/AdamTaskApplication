@@ -1,0 +1,101 @@
+﻿@model AdamTaskApplication.Data.Models.Employee
+
+<form asp-action="Edit" asp-controller="Home" class="col-md-12">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-row">
+        <div class="col">
+            <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="col">
+            <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <select asp-for="Gender" asp-items="Html.GetEnumSelectList<AdamTaskApplication.Data.Models.Gender>()" class="form-control">
+                <option selected="selected" value="">Select Your Gender</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <input asp-for="BirthDate" type="date"  class="form-control" />
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <select asp-for="Country" asp-items="Html.GetEnumSelectList<AdamTaskApplication.Data.Models.Country>()" class="form-control">
+                <option selected="selected" value="">Select Your Country</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <select asp-for="CityID" asp-items="Html.GetEnumSelectList<AdamTaskApplication.Data.Models.City>()" class="form-control">
+                <option selected="selected" value="">Select Your City</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <select asp-for="Nationalty1" asp-items="Html.GetEnumSelectList<AdamTaskApplication.Data.Models.Nationalies>()" class="form-control">
+                <option selected="selected" value="">Select Your Nationalty</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <select asp-for="JobTitle" asp-items="Html.GetEnumSelectList<AdamTaskApplication.Data.Models.JobTitles>()" class="form-control">
+                <option selected="selected" value="">Select Your Job Title</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <input asp-for="Address" class="form-control" placeholder="Address" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <select asp-for="Nationalty1" asp-items="Html.GetEnumSelectList<AdamTaskApplication.Data.Models.Nationalies>()" class="form-control">
+                <option selected="selected" value="">Select Your First Nationalty</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <select asp-for="Nationalty2" asp-items="Html.GetEnumSelectList<AdamTaskApplication.Data.Models.Nationalies>()" class="form-control">
+                <option selected="selected" value="">Select Your Second  Nationalty</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <textarea asp-for="Notes" class="form-control" style="height:117px;" placeholder="Your Notes"></textarea>
+            <span asp-validation-for="Notes" class="text-danger"></span>
+        </div>
+    </div>
+   
+    <div class="form-row" style="margin-top:15px">
+        <input type="submit" value="Edit" class="btn btn-success" />
+    </div>
+
+</form>
+
+<div style="margin-top:25px">
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
